@@ -1,0 +1,4 @@
+# Project and Solution files
+*.vs
+*.ssmssln
+*.ssmssqlproj
