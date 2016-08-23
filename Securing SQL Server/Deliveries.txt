@@ -1,3 +1,4 @@
 Event							| Date (ISO)
 -------------------				-------------
-PASS DBA Fundamentals VC [AUS]	| 20160908
+PASS DBA Fundamentals VC [AUS]	| 20160808
+SQL Grillen, Lingen (DE)		| 20160819
