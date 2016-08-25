@@ -1,0 +1,5 @@
+Event							| Date (ISO)
+-------------------				-------------
+SQL Saturday #543, Manchester	| 20160723
+Adelaide SQL User Group [AUS]	| 20160817
+SQL Saturday #536, Gothenburg	| 20160827
