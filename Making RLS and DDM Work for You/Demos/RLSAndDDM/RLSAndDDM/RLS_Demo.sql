@@ -30,25 +30,27 @@ AS
        FROM     (
                  SELECT e.BusinessEntityID
                  FROM   HumanResources.Employee AS e
-                 WHERE  e.OrganizationNode.IsDescendantOf((
-                                                           SELECT
-                                                              emp.OrganizationNode
-                                                           FROM
-                                                              HumanResources.Employee
-                                                              AS emp
-                                                           WHERE
-                                                              emp.BusinessEntityID = @appuser)) = 1)
+                 WHERE  e.OrganizationNode.IsDescendantOf
+						(
+							(
+                            SELECT
+                                emp.OrganizationNode
+                            FROM
+                                HumanResources.Employee
+                                AS emp
+                            WHERE
+                                emp.BusinessEntityID = @appuser
+							)
+						) = 1)
                 AS employees
-       WHERE    employees.BusinessEntityID = (
-                                              SELECT    SESSION_CONTEXT(N'EmployeeId'));
+       WHERE employees.BusinessEntityID = (SELECT SESSION_CONTEXT(N'EmployeeId'));
 GO
 
 --// Security policy is what applies the function to the object that we want to restrict access to.
 CREATE SECURITY POLICY security.SalesOrderFilter
 ADD FILTER PREDICATE security.fn_rls_salesOrders(SalesPersonID)
 ON Sales.SalesOrderHeader
-WITH(STATE=ON
-)
+WITH(STATE=ON)
 ;
 GO
 

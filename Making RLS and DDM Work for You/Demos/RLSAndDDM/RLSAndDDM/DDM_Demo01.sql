@@ -393,7 +393,7 @@ REVERT
 -------------------------------------------------------------
 
 --// Granting unmask ability to user.
-REVOKE UNMASK TO [MaskedUser];
+GRANT UNMASK TO [MaskedUser];
 GO
 
 EXECUTE AS USER = 'MaskedUser'
