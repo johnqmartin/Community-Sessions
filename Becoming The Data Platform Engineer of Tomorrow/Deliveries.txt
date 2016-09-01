@@ -1,0 +1,3 @@
+Event								| Date (ISO)
+-------------------					-------------
+SQL Saturday #532 [Oslo, Norway]	| 20160903
